@@ -1,0 +1,28 @@
+.card{
+    border: 1px solid #ba55d3;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    
+    background-color:#ba55d3;
+}
+
+.cardimg{
+    width:100%;
+    /* height: 60%; */
+}
+
+h2{
+    font-weight: 800;
+    font-size: 18px;
+    color: #f5f5dc;
+}
+
+.cardimg img{
+    width: 100%;
+}
+
+.check{
+    position: absolute;
+    cursor: pointer;
+}

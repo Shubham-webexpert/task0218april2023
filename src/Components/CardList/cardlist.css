@@ -1,0 +1,24 @@
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.addbtn button{
+    font-size: 15px;
+    font-weight:bold;
+    padding: 12px 24px;
+    float: right;
+    margin: 50px;
+    background-color: #ba55d3;
+    border: 1px solid #ba55d3;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.addbtn button:hover{
+    background-color: #d461f1;
+    border: 1px solid #d461f1;
+}

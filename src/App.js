@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useReducer } from "react";
+import CardList from "./Components/CardList/CardList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SortCard from "./Components/SortCard/SortCard";
+import { ItemReducer } from "./Components/ReduxFun/ItemReducer";
+import { ItemData } from "./data";
 
-function App() {
+export const CardContext = createContext();
+
+export const initialState = {
+  itemArr: ItemData,
+  sortArr: [],
+};
+
+const App = () => {
+  const [state, dispatch] = useReducer(ItemReducer, initialState);
+  // console.log("sortArr",state.sortArr)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CardContext.Provider value={{ state, dispatch }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<CardList />} />
+            <Route path="/sortitem" element={<SortCard />} />
+          </Routes>
+        </BrowserRouter>
+      </CardContext.Provider>
     </div>
   );
-}
+};
 
 export default App;
